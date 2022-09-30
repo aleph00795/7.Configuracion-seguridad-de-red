@@ -149,19 +149,31 @@ IP privada de NIC: 10.0.0.4
 
 1. En el Portal, busque y seleccione Grupos de seguridad de aplicaciones.
 
+![image](https://user-images.githubusercontent.com/110675810/193328465-524b21c6-0c71-4714-8d5b-bc64be9877cb.png)
+
 2. Cree un nuevo grupo de seguridad de aplicaciones.
 
 3. Proporcione la información necesaria: suscripción, grupo de recursos, nombre y región.
 
+![image](https://user-images.githubusercontent.com/110675810/193328791-3530b29a-1f29-4ee1-bb12-01f309378dd8.png)
+
 4. Espere a que se implemente el grupo.
+
+![image](https://user-images.githubusercontent.com/110675810/193329016-211bfa59-e819-4d46-981d-698837bb7825.png)
 
 5. En el Portal, vuelva a VM1.
 
 6. En la hoja Redes, seleccione la pestaña Grupos de seguridad de aplicaciones.
 
+![image](https://user-images.githubusercontent.com/110675810/193329151-75c9e639-f8e9-4295-886d-b8bdbb210878.png)
+
 7. Haga clic en Configurar grupos de seguridad de aplicación.
 
+![image](https://user-images.githubusercontent.com/110675810/193332710-b4e5b5b1-a905-4bfd-9e42-6038eb5df447.png)
+
 8. Seleccione el nuevo grupo de seguridad de aplicaciones y guarde los cambios.
+
+![image](https://user-images.githubusercontent.com/110675810/193332818-8cd6b142-7c30-4b29-ba18-6bf30cfd7216.png)
 
 9. En la pestaña Reglas de puerto de entrada, haga clic en Agregar regla de puerto de entrada. De este modo, se permitirá el grupo de seguridad de aplicaciones.
 
@@ -174,10 +186,17 @@ IP privada de NIC: 10.0.0.4
 - Nombre: Allow_ASG
 - Haga clic en Agregar.
 
+![image](https://user-images.githubusercontent.com/110675810/193333271-d10db3dc-4642-4cbb-9b4d-3180677c59f5.png)
+
 10. Espere a que se agregue la nueva regla de entrada.
+
+![image](https://user-images.githubusercontent.com/110675810/193333377-7a067306-18ba-40ca-9216-465d91e63f20.png)
 
 ### Prueba del grupo de seguridad de aplicaciones
 
 1. En VM1, actualice la página del explorador:
 
-3. Compruebe que ahora se muestra la página.
+2. Compruebe que ahora se muestra la página.
+
+![image](https://user-images.githubusercontent.com/110675810/193341196-4db428de-b4a6-428f-8d0d-29df3bac670b.png)
+
