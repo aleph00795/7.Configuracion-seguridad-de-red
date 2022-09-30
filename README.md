@@ -200,3 +200,76 @@ IP privada de NIC: 10.0.0.4
 
 ![image](https://user-images.githubusercontent.com/110675810/193341196-4db428de-b4a6-428f-8d0d-29df3bac670b.png)
 
+## Tarea 3: Puntos de conexión de almacenamiento (podría hacerlo en la lección sobre almacenamiento)
+
+Esta tarea requiere una cuenta de almacenamiento y una red virtual con una subred. También se necesita Explorador de Storage.
+En esta tarea, protegeremos un punto de conexión de almacenamiento.
+
+1. En Portal.
+
+2. Busque su cuenta de almacenamiento.
+
+![image](https://user-images.githubusercontent.com/110675810/193342824-780f3c13-ce5b-4469-af74-ae6bf5f2be89.png)
+
+3. Cree un recurso compartido de archivos y cargue un archivo.
+
+![image](https://user-images.githubusercontent.com/110675810/193343373-c49bd87b-b4ea-43a6-ad42-3cededa59853.png)
+
+4. Use la hoja Firma de acceso compartido para seleccionar Generar la cadena de conexión y SAS.
+
+![image](https://user-images.githubusercontent.com/110675810/193343519-1a7cd7a9-928c-4891-92b1-903950e522b2.png)
+
+![image](https://user-images.githubusercontent.com/110675810/193343927-1719d4f0-8ffd-4820-9e9d-ed28483f986e.png)
+
+5. Use Explorador de Storage y la cadena de conexión para acceder al recurso compartido de archivos.
+
+![image](https://user-images.githubusercontent.com/110675810/193344466-12cfff2c-4804-4f05-b30f-70d94080e60a.png)
+
+![image](https://user-images.githubusercontent.com/110675810/193344541-a0dc32cd-81e9-49e4-9886-1c75fa8b51e2.png)
+
+![image](https://user-images.githubusercontent.com/110675810/193344981-cc3e0c44-aaef-4dd6-a192-1362741bd070.png)
+
+6. Asegúrese de que puede ver el archivo cargado.
+
+![image](https://user-images.githubusercontent.com/110675810/193345048-dce7e48a-fd8f-4a30-a9b7-9c00d60e7d9b.png)
+
+7. Busque la red virtual y seleccione una subred en ella.
+
+![image](https://user-images.githubusercontent.com/110675810/193345308-b385e757-6706-4664-a655-d80f7d9b983d.png)
+
+8. En Puntos de conexión de servicio, vea la lista desplegable Servicios y los distintos servicios que se pueden proteger con un punto de conexión.
+
+![image](https://user-images.githubusercontent.com/110675810/193345424-6e2708f6-4eb8-4e74-a276-f25c3ba1c400.png)
+
+9. Active la opción Microsoft.Storage.
+
+![image](https://user-images.githubusercontent.com/110675810/193345485-0cf48165-9331-4e6e-bd38-419d0769266e.png)
+
+10. Guarde los cambios mediante Guardar.
+
+![image](https://user-images.githubusercontent.com/110675810/193345645-6a7e5024-f0f1-414a-abc1-c23f1504ad99.png)
+
+11. Vuelva a la cuenta de almacenamiento y selecciones redes.
+
+12. Seleccione Firewalls y redes virtuales.
+
+![image](https://user-images.githubusercontent.com/110675810/193345963-90378b15-f704-45cb-ad04-3a5af358a8ba.png)
+
+13. Cambie a Redes seleccionadas.
+
+14. Agregue la red virtual y compruebe que se muestra la subred con el nuevo punto de conexión de servicio.
+
+![image](https://user-images.githubusercontent.com/110675810/193346398-cf6d6bab-4e19-4bdd-9196-29df2ba16d48.png)
+
+15. Guarde los cambios mediante Guardar.
+
+![image](https://user-images.githubusercontent.com/110675810/193346581-12b2d8ee-4809-48de-b764-1ab68bda126b.png)
+
+16. Vuelva a Explorador de Storage.
+
+17. Actualice la cuenta de almacenamiento.
+
+18. Compruebe que ya no puede acceder al recurso compartido de archivos.
+
+![image](https://user-images.githubusercontent.com/110675810/193346890-9b427bcc-7d5a-47be-aafb-8cec07c2f66d.png)
+
