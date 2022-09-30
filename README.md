@@ -88,3 +88,96 @@ IP privada de NIC: 10.0.0.4
 3. Actualice la página HTML predeterminada de IIS de la IP pública: http://public_IP_address/default.htm. Ahora debería verse esta página.
 
 ![image](https://user-images.githubusercontent.com/110675810/193307250-37cc14a5-70c2-4029-97fc-c173af5850b0.png)
+
+
+## Tarea 2: Grupos de servicios de aplicaciones
+Esta tarea requiere una máquina virtual de Windows con IIS instalado. En estos pasos se usa VM1. El nombre de su máquina puede ser diferente.
+
+En esta tarea, nos conectaremos a una máquina virtual, crearemos una regla de denegación de entrada, configuraremos un grupo de seguridad de aplicaciones y probaremos la conectividad.
+
+### Conexión a la máquina virtual
+
+1. En el Portal, vaya a VM1.
+
+![image](https://user-images.githubusercontent.com/110675810/193316044-131f88ce-daed-4f07-a1d6-968aeae55641.png)
+
+2. En la hoja Redes, anote la dirección IP privada.
+
+IP privada de NIC: 10.0.0.4
+
+3. Asegúrese de que hay una regla de puerto de entrada que permite RDP.
+
+![image](https://user-images.githubusercontent.com/110675810/193316127-f119d80b-0f4a-4395-8f02-01089bde2033.png)
+
+4. En la hoja Información general, asegúrese de que VM1 esté en ejecución.
+
+![image](https://user-images.githubusercontent.com/110675810/193321425-b41e18d4-9ae4-49ae-b177-80b86499ca53.png)
+
+5. Haga clic en Conectar y acceda mediante RDP a VM1.
+
+6. En VM1, abra un explorador.
+
+7. Asegúrese de que se muestra la página predeterminada de IIS para la dirección IP privada: http://private_IP_address/default.htm.
+
+![image](https://user-images.githubusercontent.com/110675810/193321740-4eb7d809-5178-4e36-8b9f-7bc6edd4292e.png)
+
+### Adición de una regla de denegación de entrada y prueba de la regla
+
+1. Continúe en el Portal desde la hoja Redes.
+
+![image](https://user-images.githubusercontent.com/110675810/193322030-7e0ab676-4120-4873-b99b-35cc6d558bcf.png)
+
+2. En la pestaña Reglas de puerto de entrada, haga clic en Agregar regla de puerto de entrada. Agregue una regla que deniegue todo el tráfico entrante.
+
+- Intervalos de puertos de destino: *
+- Acción: Denegar
+- Nombre: Deny_All
+- Haga clic en Agregar.
+- Espere a que se agregue la nueva regla de entrada.
+
+![image](https://user-images.githubusercontent.com/110675810/193322328-72b6b5de-76b2-4cbe-a73e-b2a456e4ac54.png)
+
+![image](https://user-images.githubusercontent.com/110675810/193324961-2a05bab1-ec1a-4992-83b6-de02c6ac03a3.png)
+
+3. En VM1, actualice la página del explorador:
+
+4. Compruebe que la página no se muestra.
+
+![image](https://user-images.githubusercontent.com/110675810/193325400-f6fb8ddb-3396-4fc8-a964-d942e421d7cf.png)
+
+### Configuración de un grupo de seguridad de aplicaciones
+
+1. En el Portal, busque y seleccione Grupos de seguridad de aplicaciones.
+
+2. Cree un nuevo grupo de seguridad de aplicaciones.
+
+3. Proporcione la información necesaria: suscripción, grupo de recursos, nombre y región.
+
+4. Espere a que se implemente el grupo.
+
+5. En el Portal, vuelva a VM1.
+
+6. En la hoja Redes, seleccione la pestaña Grupos de seguridad de aplicaciones.
+
+7. Haga clic en Configurar grupos de seguridad de aplicación.
+
+8. Seleccione el nuevo grupo de seguridad de aplicaciones y guarde los cambios.
+
+9. En la pestaña Reglas de puerto de entrada, haga clic en Agregar regla de puerto de entrada. De este modo, se permitirá el grupo de seguridad de aplicaciones.
+
+- Origen: grupo de seguridad de aplicaciones
+- Grupo de seguridad de aplicaciones de origen: your_ASG
+- Destino: Direcciones IP
+- Direcciones IP de destino: private_IP_address/32
+- Intervalo de puertos de destino: 80
+- Prioridad: 250
+- Nombre: Allow_ASG
+- Haga clic en Agregar.
+
+10. Espere a que se agregue la nueva regla de entrada.
+
+### Prueba del grupo de seguridad de aplicaciones
+
+1. En VM1, actualice la página del explorador:
+
+3. Compruebe que ahora se muestra la página.
